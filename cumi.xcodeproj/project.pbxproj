@@ -14,6 +14,8 @@
 		4B328548290D48A700F28296 /* cumiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B328547290D48A700F28296 /* cumiTests.swift */; };
 		4B328552290D48A700F28296 /* cumiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B328551290D48A700F28296 /* cumiUITests.swift */; };
 		4B328554290D48A700F28296 /* cumiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B328553290D48A700F28296 /* cumiUITestsLaunchTests.swift */; };
+		4B328562290D49A200F28296 /* calculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B328561290D49A200F28296 /* calculatorModel.swift */; };
+		4B328565290FC80300F28296 /* KeyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B328564290FC80300F28296 /* KeyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		4B32854D290D48A700F28296 /* cumiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = cumiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B328551290D48A700F28296 /* cumiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cumiUITests.swift; sourceTree = "<group>"; };
 		4B328553290D48A700F28296 /* cumiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cumiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4B328561290D49A200F28296 /* calculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calculatorModel.swift; sourceTree = "<group>"; };
+		4B328564290FC80300F28296 /* KeyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +99,9 @@
 		4B328534290D48A500F28296 /* cumi */ = {
 			isa = PBXGroup;
 			children = (
+				4B328563290FC7A900F28296 /* View */,
+				4B328560290D499100F28296 /* Model */,
 				4B328535290D48A500F28296 /* cumiApp.swift */,
-				4B328537290D48A500F28296 /* ContentView.swift */,
 				4B328539290D48A700F28296 /* Assets.xcassets */,
 				4B32853B290D48A700F28296 /* cumi.entitlements */,
 				4B32853C290D48A700F28296 /* Preview Content */,
@@ -127,6 +132,23 @@
 				4B328553290D48A700F28296 /* cumiUITestsLaunchTests.swift */,
 			);
 			path = cumiUITests;
+			sourceTree = "<group>";
+		};
+		4B328560290D499100F28296 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B328561290D49A200F28296 /* calculatorModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4B328563290FC7A900F28296 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B328537290D48A500F28296 /* ContentView.swift */,
+				4B328564290FC80300F28296 /* KeyView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B328565290FC80300F28296 /* KeyView.swift in Sources */,
+				4B328562290D49A200F28296 /* calculatorModel.swift in Sources */,
 				4B328538290D48A500F28296 /* ContentView.swift in Sources */,
 				4B328536290D48A500F28296 /* cumiApp.swift in Sources */,
 			);
