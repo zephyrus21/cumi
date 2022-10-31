@@ -44,16 +44,27 @@ struct KeyView: View {
 						} label: {
 							Text(el.rawValue)
 								.font(.system(size: 30))
-								.frame(width: 60, height: 60)
+								.frame(width: getWidth(el: el), height: getHeight(el: el))
 								.foregroundColor(.black)
 								.background(el.buttonColor)
-								.cornerRadius(15)
+								.cornerRadius(50)
 								.shadow(color: el.buttonColor.opacity(0.6), radius: 6, x: 4, y: 4)
 						}
 					}
 				}.padding(.bottom, 6)
 			}
 		}
+	}
+	
+	func getWidth(el: Keys) -> CGFloat {
+		if el == .zero {
+			return (UIScreen.main.bounds.width - (5 * 10)) / 2
+		}
+		return (UIScreen.main.bounds.width - (5 * 10)) / 4
+	}
+	
+	func getHeight(el: Keys) -> CGFloat {
+		return (UIScreen.main.bounds.width + (30)) / 5
 	}
 	
 	func tapKey(button: Keys)  {
