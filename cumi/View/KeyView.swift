@@ -30,7 +30,7 @@ struct KeyView: View {
 					.scaleEffect(changeColor ? 1.5 : 1)
 					.frame(width: 360, height: 280)
 					.animation(Animation.easeInOut.speed(0.17).repeatForever(), value: changeColor)
-					.onAppear(perform: {self.changeColor.toggle()})
+//					.onAppear(perform: {self.changeColor.toggle()})
 					.overlay(Text(value)
 						.fontWeight(.bold)
 						.font(.system(size: 100))
@@ -68,7 +68,52 @@ struct KeyView: View {
 	}
 	
 	func tapKey(button: Keys)  {
-		
+		switch button {
+			case .add, .sub, .multiply, .divide, .equal:
+				if button == .add {
+					self.currentOperations = .add
+					self.runningValue = Int(self.value) ?? 0
+				} else if button == .sub {
+					self.currentOperations = .sub
+					self.runningValue = Int(self.value) ?? 0
+				} else if button == .multiply {
+					self.currentOperations = .multiply
+					self.runningValue = Int(self.value) ?? 0
+				} else if button == .divide {
+					self.currentOperations = .divide
+					self.runningValue = Int(self.value) ?? 0
+				} else if button == .equal {
+					let runningValue = self.runningValue
+					let currentValue = Int(self.value) ?? 0
+					
+					switch self.currentOperations {
+						case .add:
+							self.value = "\(runningValue + currentValue)"
+						case .sub:
+							self.value = "\(runningValue - currentValue)"
+						case .multiply:
+							self.value = "\(runningValue * currentValue)"
+						case .divide:
+							self.value = "\(runningValue / currentValue)"
+						case .none:
+							break
+					}
+				}
+				if button != .equal {
+					self.value = "0"
+				}
+			case .clear:
+				self.value = "0"
+			case .decimal, .negative, .percent:
+				break
+			default:
+				let number = button.rawValue
+				if self.value == "0" {
+					value = number
+				} else {
+					self.value = "\(self.value)\(number)"
+				}
+		}
 	}
 }
 
